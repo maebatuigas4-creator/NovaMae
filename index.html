@@ -1,142 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nova Mae Resuena | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Nova Mae Resuena | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    <style>
-        /* GENERAL */
-        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-        body { background: linear-gradient(135deg, #667eea, #764ba2); color:white; line-height:1.5; overflow-x:hidden; }
+<style>
 
-        /* NAVBAR */
-        nav { position:fixed; top:0; width:100%; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; background: rgba(0,0,0,0.5); backdrop-filter: blur(12px); z-index:1000; border-bottom:2px solid #ffd369; }
-        nav .logo img { width:65px; height:65px; border-radius:50%; object-fit:cover; border:3px solid #ffd369; transition:0.3s; }
-        nav .logo img:hover { transform:scale(1.1); }
-        .menu a { color:white; text-decoration:none; margin-left:30px; font-size:18px; font-weight:600; transition:0.3s; }
-        .menu a:hover { color:#ffd369; }
+/* GENERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-        /* SECTIONS */
-        section { min-height:100vh; display:flex; justify-content:center; align-items:center; padding:60px 20px; text-align:center; position:relative; }
-        section:nth-child(even) { background: rgba(0,0,0,0.15); }
-        .section-container { max-width:900px; width:100%; }
+html{
+    scroll-behavior:smooth;
+}
 
-        h2 { margin-bottom:30px; font-size:32px; font-weight:bold; background: linear-gradient(to right, #ffd369, #ff7f50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    line-height:1.6;
+}
 
-        /* HOME */
-        .profile-circle { width:160px; height:160px; border-radius:50%; overflow:hidden; border:5px solid #ffd369; box-shadow:0 12px 25px rgba(0,0,0,0.35); margin:0 auto 20px; }
-        .profile-circle img { width:100%; height:100%; object-fit:cover; transition:0.3s; }
-        .profile-circle img:hover { transform:scale(1.05); }
-        #home h1 { font-size:38px; margin-bottom:10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.4); }
-        #home span { color:#ffd369; }
-        #home p { margin-bottom:20px; font-size:16px; opacity:0.9; }
-        .btn { padding:12px 28px; border:none; border-radius:25px; background:#ffd369; color:black; font-weight:bold; cursor:pointer; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.3); }
-        .btn:hover { background:white; transform:scale(1.05); }
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(12px);
+    border-bottom:2px solid #ffd369;
+    z-index:1000;
+}
 
-        /* CARDS */
-        .card { background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border-radius:25px; padding:25px; margin-bottom:25px; font-size:16px; transition:0.3s; text-align:center; box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
-        .card:hover { transform:translateY(-5px) scale(1.02); background: rgba(255,255,255,0.28); }
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:3px solid #ffd369;
+}
 
-        /* INFO GRID */
-        .info-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:15px; }
-        .info-grid div { background: rgba(255,255,255,0.25); padding:20px; border-radius:20px; font-weight:500; min-width:180px; font-size:15px; text-align:center; transition:0.3s; }
-        .info-grid div:hover {transform:scale(1.05); }
+.menu{
+    display:flex;
+    gap:25px;
+}
 
-        /* SKILLS GRID */
-        .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
-        .skills-grid div {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 16px;
-            min-width: 140px;
-            text-align: center;
-            transition: 0.3s;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.15);
-            cursor: default;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-        }
-        .skills-grid div i {
-            font-size: 18px;
-            color: #ffd369;
-            transition: 0.3s;
-        }
-        .skills-grid div:hover {
-            background: #ffd369;
-            color: black;
-            transform: scale(1.05);
-        }
-        .skills-grid div:hover i {
-            color: black;
-        }
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
 
-        /* PROJECTS GRID */
-        .projects-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:15px; }
-        .projects-grid div { background: rgba(255,255,255,0.25); padding:20px; border-radius:20px; font-weight:600; font-size:16px; min-width:180px; text-align:center; transition:0.3s; }
-        .projects-grid div:hover { background:#ffd369; color:black; transform:scale(1.05); }
+.menu a:hover{
+    color:#ffd369;
+}
 
-        /* CONTACT GRID */
-        .contact-grid {
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:20px;
-            margin-top:10px;
-        }
-        .contact-card {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            padding: 20px 20px;
-            width: 260px;
-            text-align: left;
-            transition:0.3s;
-            box-shadow:0 8px 20px rgba(0,0,0,0.25);
-            border: 2px solid transparent;
-            cursor:pointer;
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            height: 80px;
-        }
-        .contact-card i { font-size: 20px; color: #ffd369; margin-right: 10px; width: 24px; text-align: center; transition:0.3s; }
-        .contact-card span { font-size: 14px; }
-        .contact-card:hover { transform: scale(1.05); border: 2px solid #ffd369; background: rgba(255,255,255,0.28); }
+/* SECTIONS */
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 20px 60px;
+    text-align:center;
+}
 
-        /* FOOTER */
-        footer { background: rgba(0,0,0,0.45); padding:20px; text-align:center; font-weight:500; font-size:16px; }
+.section-container{
+    width:100%;
+    max-width:900px;
+}
 
-        /* BACKGROUND ANIMATION */
-        body::before {
-            content:'';
-            position:fixed; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle, rgba(255,255,255,0.05), transparent); z-index:-1; animation:moveBg 60s linear infinite;
-        }
-        @keyframes moveBg { 0%{transform:translate(0,0);} 50%{transform:translate(100px,50px);} 100%{transform:translate(0,0);} }
+/* TITLES */
+h2{
+    margin-bottom:30px;
+    font-size:32px;
+}
 
-        /* RESPONSIVE */
-        @media(max-width:768px){
-            nav { padding:6px 20px; }
-            nav .menu a { margin-left:15px; font-size:14px; }
-            #home h1 { font-size:28px; }
-            #home p { font-size:14px; }
-            .profile-circle { width:120px; height:120px; }
-            .info-grid div, .projects-grid div, .skills-grid div { font-size:14px; padding:12px 15px; min-width:100px; }
-            .contact-card { width:50%; padding:20px; font-size:14px; }
-        }
-    </style>
+/* HOME */
+.profile-circle{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid #ffd369;
+    margin:0 auto 20px;
+}
+
+.profile-circle img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+#home h1{
+    font-size:36px;
+}
+
+#home span{
+    color:#ffd369;
+}
+
+.btn{
+    margin-top:15px;
+    padding:12px 28px;
+    border:none;
+    border-radius:25px;
+    background:#ffd369;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.15);
+    padding:25px;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+/* GRIDS */
+.info-grid,
+.skills-grid,
+.projects-grid,
+.contact-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.info-grid div,
+.projects-grid div{
+    background:rgba(255,255,255,0.25);
+    padding:20px;
+    border-radius:15px;
+    flex:1 1 250px;
+    max-width:300px;
+}
+
+.skills-grid div{
+    background:rgba(255,255,255,0.2);
+    padding:12px 20px;
+    border-radius:25px;
+    flex:1 1 200px;
+    max-width:250px;
+}
+
+.skills-grid i{
+    margin-right:8px;
+    color:#ffd369;
+}
+
+/* CONTACT */
+.contact-card{
+    background:rgba(255,255,255,0.2);
+    padding:15px;
+    border-radius:15px;
+    flex:1 1 250px;
+    max-width:300px;
+}
+
+.contact-card a{
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.4);
+}
+
+/* MOBILE FIX */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+        padding:10px 20px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    #home h1{
+        font-size:26px;
+    }
+
+    .profile-circle{
+        width:120px;
+        height:120px;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
 <nav>
-    <div class="logo"><img src="logo.png" alt="Nova Mae"></div>
+    <div class="logo">
+        <img src="logo.png" alt="Nova Mae">
+    </div>
     <div class="menu">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -144,87 +226,80 @@
     </div>
 </nav>
 
-<!-- HOME -->
 <section id="home">
     <div class="section-container">
-        <div class="profile-circle"><img src="profile.png" alt="Nova Mae"></div>
+        <div class="profile-circle">
+            <img src="profile.png" alt="Nova Mae">
+        </div>
         <h1>Hello, I'm <span>Nova Mae</span></h1>
         <p>BSIT Student | Future Web Developer</p>
         <a href="#about"><button class="btn">View My Portfolio</button></a>
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
     <div class="section-container">
-        <h2>👤 About Me</h2>
+        <h2>About Me</h2>
 
-        <!-- Personal Info -->
         <div class="card">
-            <h3>Personal Information</h3>
             <div class="info-grid">
-                <div><strong>Name:</strong><br>Nova Mae B. Resuena</div>
-                <div><strong>Course:</strong><br>BS Information Technology</div>
-                <div><strong>Year Level:</strong><br>3rd Year</div>
+                <div>Name: Nova Mae B. Resuena</div>
+                <div>Course: BSIT</div>
+                <div>3rd Year</div>
             </div>
         </div>
 
-        <!-- Career Objective -->
         <div class="card">
-            <h3>🎯 Career Objective</h3>
-            <p>To become a professional web developer who builds modern, creative, and user-friendly web applications.</p>
+            <h3>Career Objective</h3>
+            <p>To become a professional web developer building modern systems.</p>
         </div>
 
-        <!-- Skills -->
         <div class="card">
-            <h3>🛠 Skills</h3>
+            <h3>Skills</h3>
             <div class="skills-grid">
-                <div><i class="fab fa-html5"></i> HTML</div>
-                <div><i class="fab fa-css3-alt"></i> CSS</div>
-                <div><i class="fas fa-code"></i> C Programming</div>
-                <div><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+                <div><i class="fab fa-html5"></i>HTML</div>
+                <div><i class="fab fa-css3-alt"></i>CSS</div>
+                <div><i class="fas fa-code"></i>C Programming</div>
+                <div><i class="fas fa-mobile-alt"></i>Responsive Design</div>
             </div>
         </div>
 
-        <!-- Projects -->
         <div class="card">
-            <h3>📂 Projects</h3>
+            <h3>Project</h3>
             <div class="projects-grid">
-                <div>Bantayan Island Trycle Transportation Booking System</div>
+                <div>Bantayan Island Tricycle Booking System</div>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
     <div class="section-container">
-        <h2>📞 Contact Me</h2>
+        <h2>Contact Me</h2>
         <div class="contact-grid">
-           <div class="contact-card">
-                <a href="mailto:maebatuigas4@gmail.com" style="color:white; text-decoration:none; display: flex; align-items: center;">
+            <div class="contact-card">
+                <a href="mailto:maebatuigas4@gmail.com">
                     <i class="fas fa-envelope"></i>
-                    <span>maebatuigas4@gmail.com</span>
+                    maebatuigas4@gmail.com
                 </a>
             </div>
             <div class="contact-card">
-                <a href="tel:+639519331786" style="color:white; text-decoration:none; display: flex; align-items: center;">
+                <a href="tel:+639519331786">
                     <i class="fas fa-phone"></i>
-                    <span>+63 951 933 1786</span>
+                    +63 951 933 1786
                 </a>
             </div>
             <div class="contact-card">
-                <a href="#" style="color:white; text-decoration:none; display: flex; align-items: center;">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Lipayran, Bantayan, Cebu</span>
-                </a>
+                <i class="fas fa-map-marker-alt"></i>
+                Lipayran, Bantayan, Cebu
             </div>
         </div>
     </div>
 </section>
 
 <footer>
-    © 2026 Nova Mae Resuena. All Rights Reserved. 
+© 2026 Nova Mae Resuena
 </footer>
 
 </body>
